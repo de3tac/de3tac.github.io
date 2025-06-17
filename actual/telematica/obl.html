@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Media</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        input[type="number"] {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+        button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #resultado {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DE3TAC - Calculadora de Mitjana Bloc Curricular - Telecos-2nBloc</h1>
+        <p>Introdueix les qualificacions obtingudes:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom Assignatura</th>
+                    <th>Numero de Crèdits (ECTS)</th>
+                    <th>Nota Assignatura</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Probabilitat i Estadística</td>
+                    <td><span id="creditos1">6</span></td>
+                    <td><input type="number" id="nota1" placeholder="Nota"></td>
+                </tr>
+                <tr>
+                    <td>Processament Digital del Senyal</td>
+                    <td><span id="creditos2">6</span></td>
+                    <td><input type="number" id="nota2" placeholder="Nota"></td>
+                </tr>
+                <tr>
+                    <td>Fonaments de Comunicacions</td>
+                    <td><span id="creditos3">6</span></td>
+                    <td><input type="number" id="nota3" placeholder="Nota"></td>
+                </tr>
+                <tr>
+                    <td>Circuits i Sistemes Digitals</td>
+                    <td><span id="creditos4">6</span></td>
+                    <td><input type="number" id="nota4" placeholder="Nota"></td>
+                </tr>
+                <tr>
+                    <td>Interconnexió de Xarxes</td>
+                    <td><span id="creditos5">6</span></td>
+                    <td><input type="number" id="nota5" placeholder="Nota"></td>
+                </tr>
+                <tr>
+                    <td>Sistemes Operatius</td>
+                    <td><span id="creditos6">6</span></td>
+                    <td><input type="number" id="nota6" placeholder="Nota"></td>
+                </tr>
+                <tr>
+                    <td>Ones Electromagnètiques en Sistemes de Comunicació</td>
+                    <td><span id="creditos7">7.5</span></td>
+                    <td><input type="number" id="nota7" placeholder="Nota"></td>
+                </tr>
+                <tr>
+                    <td>Emissors i Receptors</td>
+                    <td><span id="creditos8">4.5</span></td>
+                    <td><input type="number" id="nota8" placeholder="Nota"></td>
+                </tr>
+                <tr>
+                    <td>Circuits Electrònics i Sistemes d'Alimentació</td>
+                    <td><span id="creditos9">6</span></td>
+                    <td><input type="number" id="nota9" placeholder="Nota"></td>
+                </tr>
+                <tr>
+                    <td>Arquitectura i Protocols d'Internet</td>
+                    <td><span id="creditos10">6</span></td>
+                    <td><input type="number" id="nota10" placeholder="Nota"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button onclick="calcularMedia()">Calcular Mitjana Bloc Curricular</button>
+
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function calcularMedia() {
+            const creditos = [];
+            const notas = [];
+            for (let i = 1; i <= 10; i++) {
+                creditos.push(parseFloat(document.getElementById(`creditos${i}`).textContent) || 0);
+                notas.push(parseFloat(document.getElementById(`nota${i}`).value) || 0);
+            }
+
+            let sumaPonderada = 0;
+            let totalCreditos = 0;
+
+            for (let i = 0; i < notas.length; i++) {
+                sumaPonderada += notas[i] * creditos[i];
+                totalCreditos += creditos[i];
+            }
+
+            const media = totalCreditos > 0 ? (sumaPonderada / totalCreditos) : 0;
+
+            document.getElementById('resultado').textContent = `La mitjana ponderada és: ${media.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

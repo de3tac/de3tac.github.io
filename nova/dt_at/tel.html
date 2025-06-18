@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Telemàtica - DE3TAC</title>
+    <title>DT-Aeros-Telecos - DE3TAC</title>
     <link rel="stylesheet" href="../../styles.css" />
     <link rel="icon" href="../../resources/icon.ico" type="image/x-icon" />
 </head>
@@ -17,7 +17,7 @@
 
     <h1 style="color: #0077c8;">
         <img src="../../resources/logo.jpg" alt="Logo Delegació EETAC" width="75" />
-        TELEMÀTICA - Simulador de notes dels blocs curriculars de la
+        DT-Aeros-Telecos - Simulador de notes dels blocs curriculars de la
         <span style="color: #2b2301;">Delegació d'Estudiants de l'EETAC</span>!
     </h1>
     <p></p>
@@ -57,7 +57,7 @@
             <tbody>
                 <!-- Assignatures inicials (10) -->
                 <tr>
-                    <td>Probabilitat i Estadística</td>
+                    <td>Ampliació de Matemàtiques 2</td>
                     <td><span id="creditos1">6</span></td>
                     <td><input type="number" id="nota1" placeholder="Nota" /></td>
                 </tr>
@@ -67,7 +67,7 @@
                     <td><input type="number" id="nota2" placeholder="Nota" /></td>
                 </tr>
                 <tr>
-                    <td>Fonaments de Comunicacions</td>
+                    <td>Comunicacions Aeroportuaries/Comunicacions Aeronàutiques 1</td>
                     <td><span id="creditos3">6</span></td>
                     <td><input type="number" id="nota3" placeholder="Nota" /></td>
                 </tr>
@@ -164,6 +164,7 @@
                 </tr>
             </tbody>
         </table>
+    
 
         <button onclick="calcularMedia()">Calcular Mitjana Bloc Curricular</button>
 
@@ -181,7 +182,7 @@
             const errorMsg = document.getElementById("carregarError");
             errorMsg.textContent = "";
 
-            const prefix = "<jrl/N2025/TEL/B2/";
+            const prefix = "<jrl/N2025/DTAT/TEL/";
             const suffix = "/jrl>";
 
             if (!codiText.startsWith(prefix) || !codiText.endsWith(suffix)) {
@@ -249,7 +250,7 @@
                 notas.push(isNaN(nota) ? "NA" : nota.toFixed(2));
             }
 
-            const codi = `<jrl/N2025/TEL/B2/${notas.join("-")}/jrl>`;
+            const codi = `<jrl/N2025/DTAT/TEL/${notas.join("-")}/jrl>`;
             document.getElementById("codiGenerat").textContent = codi;
         }
     </script>

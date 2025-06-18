@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aeroespacials</title>
+    <title>DT-Aeros-Telecos</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="icon" href="../../resources/icon.ico" type="image/x-icon">
 </head>
@@ -13,7 +13,7 @@
 
     <h1 style="color: #0077c8;">
         <img src="../../resources/logo.jpg" alt="Logo Delegació EETAC" width="75">
-        AEROESPACIALS - Simulador de notes dels blocs curriculars de la <span style="color: #2b2301;">Delegació d'Estudiants de l'EETAC</span>!
+        DT-Aeros-Telecos - Simulador de notes dels blocs curriculars de la <span style="color: #2b2301;">Delegació d'Estudiants de l'EETAC</span>!
     </h1>
 <p><strong>&nbsp;</strong></p>
 <h2><strong>⚠️ Has seleccionat el model: "<span style="color: #f1a326;">NORMATIVA CURRICULAR A PARTIR DE SETEMBRE CURS 2025-26</span>".</strong></h2>
@@ -40,7 +40,7 @@
             errorMsg.textContent = "";
             missatgeCarrega.textContent = "";
 
-            const prefix = "<jrl/N2025/AER/B2/";
+            const prefix = "<jrl/N2025/DTAT/AER/";
             const suffix = "/jrl>";
 
             if (!codiText.startsWith(prefix) || !codiText.endsWith(suffix)) {
@@ -70,7 +70,7 @@
     </script>
 
     <div class="container">
-        <h1>DE3TAC - Calculadora de Mitjana Bloc Curricular - Aeros - B2 - Obligatòries + Menció</h1>
+        <h1>DE3TAC - Calculadora de Mitjana Bloc Curricular - Aeros - Obligatòries + Menció</h1>
         <p>Introdueix les qualificacions obtingudes:</p>
         <table>
             <thead>
@@ -86,7 +86,7 @@
     <tr><td>Termodinàmica</td><td><span id="creditos2">6</span></td><td><input type="number" id="nota2" placeholder="Nota"></td></tr>
     <tr><td>Informàtica 2</td><td><span id="creditos3">4.5</span></td><td><input type="number" id="nota3" placeholder="Nota"></td></tr>
     <tr><td>Ampliació de Matemàtiques 2</td><td><span id="creditos4">7.5</span></td><td><input type="number" id="nota4" placeholder="Nota"></td></tr>
-    <tr><td>Sistemes Lineals</td><td><span id="creditos5">4.5</span></td><td><input type="number" id="nota5" placeholder="Nota"></td></tr>
+    <tr><td>Circuits i Sistemes Lineals</td><td><span id="creditos5">4.5</span></td><td><input type="number" id="nota5" placeholder="Nota"></td></tr>
     <tr><td>Enginyeria Aeroportuària</td><td><span id="creditos6">6</span></td><td><input type="number" id="nota6" placeholder="Nota"></td></tr>
     <tr><td>Mecànica de Fluids</td><td><span id="creditos7">7.5</span></td><td><input type="number" id="nota7" placeholder="Nota"></td></tr>
     <tr><td>Mecànica de Vol</td><td><span id="creditos8">3</span></td><td><input type="number" id="nota8" placeholder="Nota"></td></tr>
@@ -97,7 +97,7 @@
     <tr><td>Aerodinàmica</td><td><span id="creditos13">4.5</span></td><td><input type="number" id="nota13" placeholder="Nota"></td></tr>
     <tr><td>Meteorologia</td><td><span id="creditos14">3</span></td><td><input type="number" id="nota14" placeholder="Nota"></td></tr>
     <tr><td>Estructures i Resistència dels Materials</td><td><span id="creditos15">4.5</span></td><td><input type="number" id="nota15" placeholder="Nota"></td></tr>
-    <tr><td>Electrònica</td><td><span id="creditos16">6</span></td><td><input type="number" id="nota16" placeholder="Nota"></td></tr>
+    <tr><td>Electrònica, [(ET+CSD)/2]</td><td><span id="creditos16">6</span></td><td><input type="number" id="nota16" placeholder="Nota"></td></tr>
     <tr><td>Comunicacions aeronàutiques 1/Comunicacions aeroportuàries</td><td><span id="creditos17">6</span></td><td><input type="number" id="nota17" placeholder="Nota"></td></tr>
     <tr><td>Aviònica/Instal·lacions de comunicacions</td><td><span id="creditos18">7.5</span></td><td><input type="number" id="nota18" placeholder="Nota"></td></tr>
     <tr><td>Control i guiatge/Geotècnia</td><td><span id="creditos19">4.5</span></td><td><input type="number" id="nota19" placeholder="Nota"></td></tr>
@@ -109,7 +109,7 @@
 </tbody>
 
         </table>
-
+<p><strong><u>ATENCIÓ:</u> Pels estudiants que cursin la modalitat Aeroports + Telemàtica la nota de l'assignatura <em>"Instal·lacions de comunicacions"</em>, serà: <em>[(FT+IX+XLAM)/3]</em>.</strong></p>
         <button onclick="calcularMedia()">Calcular Mitjana Bloc Curricular</button>
         <p id="resultado"></p>
     </div>
@@ -154,7 +154,7 @@
                 notas.push(isNaN(nota) ? "NA" : nota.toFixed(2));
             }
 
-            const codi = `<jrl/N2025/AER/B2/${notas.join("-")}/jrl>`;
+            const codi = `<jrl/N2025/DTAT/AER/${notas.join("-")}/jrl>`;
             document.getElementById('codiGenerat').textContent = codi;
         }
     </script>

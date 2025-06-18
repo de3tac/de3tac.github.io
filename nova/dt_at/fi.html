@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>DT-Aeros-Telecos - DE3TAC</title>
-    <link rel="stylesheet" href="../../styles.css">
-    <link rel="icon" href="../../resources/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="icon" href="../../resources/icon.ico" type="image/x-icon" />
 </head>
-<button class="shadow__btn" onclick="window.location.href='blocs.html'">
-    ←
-</button>
-<button class="shadow__btn" onclick="window.location.href='../../index.html'">
-    Inici
-</button>
 <body>
-<h1 style="color: #0077c8;"><img src="../../resources/logo.jpg" alt="Logo Delegació EETAC" width="75"> DT-Aeros-Telecos - Simulador de notes dels blocs curriculars de la <span style="color: #2b2301;">Delegaci&oacute; d'Estudiants de l'EETAC</span>!</h1>
-<p></p>
+    <button class="shadow__btn" onclick="window.location.href='blocs.html'">
+        ←
+    </button>
+    <button class="shadow__btn" onclick="window.location.href='../../index.html'">
+        Inici
+    </button>
+
+    <h1 style="color: #0077c8;">
+        <img src="../../resources/logo.jpg" alt="Logo Delegació EETAC" width="75" />
+        DT-Aeros-Telecos - Simulador de notes dels blocs curriculars de la
+        <span style="color: #2b2301;">Delegació d'Estudiants de l'EETAC</span>!
+    </h1>
+    <p></p>
 <p><strong>&nbsp;</strong></p>
-<h2><strong>⚠️ Has seleccionat el model: "<span style="color: #f1a326;">NORMATIVA CURRICULAR FINS JUNY 2025</span>".</strong></h2>
-<p>Si tens pensat compensar a partir del setembre del curs 2025-26 et recomanem tornar enrere i canviar de model.</p>
+<h2><strong>⚠️ Has seleccionat el model: "<span style="color: #f1a326;">NORMATIVA CURRICULAR A PARTIR DE SETEMBRE CURS 2025-26</span>".</strong></h2>
+<p>Si tens pendent el tancament d'algun bloc curricular per l'avaluació actual, (juny curs 2024-25), et recomanem tornar enrere i canviar al model actual.</p>
 <p><strong>&nbsp;</strong></p>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <textarea
+            id="inputCodi"
+            rows="3"
+            cols="80"
+            placeholder="Enganxa aquí el codi..."
+        ></textarea><br />
+        <button onclick="carregarNotes()">Carregar Notes</button>
+        <p
+            id="carregarError"
+            style="color: red; font-weight: bold; margin-top: 10px;"
+        ></p>
+    </div>
+
     <div class="container">
         <h1>DE3TAC - Calculadora de Mitjana Bloc Curricular - DT-Aeros-Telecos - Fase Inicial</h1>
         <p>Introdueix les qualificacions obtingudes:</p>
@@ -36,52 +56,62 @@
                 <tr>
                     <td>Empresa</td>
                     <td><span id="creditos1">6</span></td>
-                    <td><input type="number" id="nota1" placeholder="Nota"></td>
+                    <td><input type="number" id="nota1" placeholder="Nota" /></td>
                 </tr>
                 <tr>
                     <td>Fonaments de Física</td>
                     <td><span id="creditos2">6</span></td>
-                    <td><input type="number" id="nota2" placeholder="Nota"></td>
+                    <td><input type="number" id="nota2" placeholder="Nota" /></td>
                 </tr>
                 <tr>
                     <td>Àlgebra i Geometria</td>
                     <td><span id="creditos3">6</span></td>
-                    <td><input type="number" id="nota3" placeholder="Nota"></td>
+                    <td><input type="number" id="nota3" placeholder="Nota" /></td>
                 </tr>
                 <tr>
                     <td>Càlcul</td>
                     <td><span id="creditos4">6</span></td>
-                    <td><input type="number" id="nota4" placeholder="Nota"></td>
+                    <td><input type="number" id="nota4" placeholder="Nota" /></td>
                 </tr>
                 <tr>
                     <td>Química</td>
                     <td><span id="creditos5">6</span></td>
-                    <td><input type="number" id="nota5" placeholder="Nota"></td>
+                    <td><input type="number" id="nota5" placeholder="Nota" /></td>
                 </tr>
                 <tr>
                     <td>Tecnologia Aeroespacial i Transport Aeri</td>
                     <td><span id="creditos6">6</span></td>
-                    <td><input type="number" id="nota6" placeholder="Nota"></td>
+                    <td><input type="number" id="nota6" placeholder="Nota" /></td>
                 </tr>
                 <tr>
                     <td>Mecànica</td>
                     <td><span id="creditos7">6</span></td>
-                    <td><input type="number" id="nota7" placeholder="Nota"></td>
+                    <td><input type="number" id="nota7" placeholder="Nota" /></td>
                 </tr>
                 <tr>
                     <td>Informàtica 1</td>
                     <td><span id="creditos8">6</span></td>
-                    <td><input type="number" id="nota8" placeholder="Nota"></td>
+                    <td><input type="number" id="nota8" placeholder="Nota" /></td>
                 </tr>
                 <tr>
                     <td>Ampliació de Matemàtiques</td>
                     <td><span id="creditos9">6</span></td>
-                    <td><input type="number" id="nota9" placeholder="Nota"></td>
+                    <td><input type="number" id="nota9" placeholder="Nota" /></td>
                 </tr>
                 <tr>
                     <td>Expressió Gràfica</td>
                     <td><span id="creditos10">6</span></td>
-                    <td><input type="number" id="nota10" placeholder="Nota"></td>
+                    <td><input type="number" id="nota10" placeholder="Nota" /></td>
+                </tr>
+                <tr>
+                    <td>Informàtica II</td>
+                    <td><span id="creditos11">4.5</span></td>
+                    <td><input type="number" id="nota11" placeholder="Nota" /></td>
+                </tr>
+                <tr>
+                    <td>Fonaments de Telemàtica</td>
+                    <td><span id="creditos12">6</span></td>
+                    <td><input type="number" id="nota12" placeholder="Nota" /></td>
                 </tr>
             </tbody>
         </table>
@@ -89,13 +119,61 @@
         <button onclick="calcularMedia()">Calcular Mitjana Bloc Curricular</button>
 
         <p id="resultado"></p>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button onclick="generarCodi()">Generar Codi</button>
+            <p id="codiGenerat" style="font-weight: bold; margin-top: 10px;"></p>
+        </div>
     </div>
 
     <script>
+        function carregarNotes() {
+            const codiText = document.getElementById("inputCodi").value.trim();
+            const errorMsg = document.getElementById("carregarError");
+            errorMsg.textContent = "";
+
+            const prefix = "<jrl/N2025/DTAT/FI/";
+            const suffix = "/jrl>";
+
+            if (!codiText.startsWith(prefix) || !codiText.endsWith(suffix)) {
+                errorMsg.style.color = "red";
+                errorMsg.textContent = "⚠️ El codi no té el format correcte.";
+                return;
+            }
+
+            const notaStr = codiText.slice(prefix.length, -suffix.length);
+            const notas = notaStr.split("-");
+
+            if (notas.length !== 12) {
+                errorMsg.style.color = "red";
+                errorMsg.textContent = "⚠️ El codi no conté el nombre correcte de notes.";
+                return;
+            }
+
+            for (let i = 0; i < notas.length; i++) {
+                const notaInput = document.getElementById(`nota${i + 1}`);
+                if (notaInput) {
+                    if (notas[i] === "NA") {
+                        notaInput.value = "";
+                    } else {
+                        const notaNum = parseFloat(notas[i]);
+                        if (!isNaN(notaNum)) {
+                            notaInput.value = notaNum;
+                        } else {
+                            notaInput.value = "";
+                        }
+                    }
+                }
+            }
+
+            errorMsg.style.color = "green";
+            errorMsg.textContent = "✅ Notes carregades correctament!";
+        }
+
         function calcularMedia() {
             const creditos = [];
             const notas = [];
-            for (let i = 1; i <= 10; i++) {
+            for (let i = 1; i <= 12; i++) {
                 creditos.push(parseFloat(document.getElementById(`creditos${i}`).textContent) || 0);
                 notas.push(parseFloat(document.getElementById(`nota${i}`).value) || 0);
             }
@@ -108,9 +186,20 @@
                 totalCreditos += creditos[i];
             }
 
-            const media = totalCreditos > 0 ? (sumaPonderada / totalCreditos) : 0;
+            const media = totalCreditos > 0 ? sumaPonderada / totalCreditos : 0;
 
-            document.getElementById('resultado').textContent = `La mitjana ponderada és: ${media.toFixed(2)}`;
+            document.getElementById("resultado").textContent = `La mitjana ponderada és: ${media.toFixed(2)}`;
+        }
+
+        function generarCodi() {
+            const notas = [];
+            for (let i = 1; i <= 12; i++) {
+                const nota = parseFloat(document.getElementById(`nota${i}`).value);
+                notas.push(isNaN(nota) ? "NA" : nota.toFixed(2));
+            }
+
+            const codi = `<jrl/N2025/DTAT/FI/${notas.join("-")}/jrl>`;
+            document.getElementById("codiGenerat").textContent = codi;
         }
     </script>
 </body>
